@@ -1,0 +1,11 @@
+{
+  "appId": "com.kiaan.usa2025",
+  "appName": "USA 2025",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 3000
+    }
+  }
+}

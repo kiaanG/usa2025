@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USA 2025</title>
+    <link rel="manifest" href="manifest.json">
+    <script type="module" src="service-worker.js"></script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #6789A3;
+        }
+        header {
+            background: #1F3B5F;
+            color: #E0F7FA;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #3E6B80;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #E0F7FA;
+            position: relative;
+            overflow: hidden;
+        }
+        .container .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #274B5A;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            text-align: center;
+            border-radius: 8px;
+            transform: rotate(0deg) scale(0);
+            transition:  0.5s ease, 0.5s ease;
+        }
+        .container:hover .overlay {
+            transform: scale(1);
+            opacity: 1;
+        }
+        h1, h2 {
+            color: #F9D3A6;
+        }
+        h3 {
+            color: #A8FFD7;
+        }
+        .flight-table {
+            width: 50%;
+            border-collapse: collapse;
+            text-align: center;
+            margin: 0 auto;
+            border: 2px solid #E0F7FA;
+            background-color: #3E6B80;
+            color: #A8FFD7;
+        }
+        .flight-table td {
+            border: 1px solid #E0F7FA;
+            padding: 8px;
+        }
+        .flight-table th {
+            border: 1px solid #E0F7FA;
+            padding: 8px;
+            color: #F9D3A6;
+        }
+        .flight-table thead {
+            background-color: #1F3B5F;
+        }
+        .flight-table-overlay {
+            width: 100%;
+            height: 100%;
+            display: contents;
+            justify-content: center;
+            align-items: center;
+            border-collapse: collapse;
+            text-align: center;
+            border: 1px solid #E0F7FA;
+            background-color: #2A4D5F;
+            color: #A8FFD7;
+            border-radius: 8px; 
+            padding: 10px;
+                   
+        }
+
+        .flight-table-overlay table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .flight-table-overlay th,
+        .flight-table-overlay td {
+            border: 1px solid #E0F7FA;
+            padding: 10px;
+            height: 10px;
+        }
+
+        .flight-table-overlay th {
+            color: #F9D3A6;
+            background-color: #1F3B5F;
+        }
+
+        .flight-table-overlay td:nth-child(2), 
+        .flight-table-overlay td:nth-child(4) {
+            background-color: #183648; /* Darker shade for departure and arrival times */
+            color: #E0F7FA;
+        }
+
+        .flight-table-overlay th:nth-child(2), 
+        .flight-table-overlay th:nth-child(4) {
+            background-color: #102B3E; /* Darker shade for departure and arrival headers */
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background: #1F3B5F;
+            color: #F9D3A6;
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <h1>USA Trip Itinerary</h1>
+        <p>May 1, 2025 - May 30, 2025</p>
+    </header>
+    <div>
+        <div class="container">
+            <h3>Day 1: May 1, 2025 - Arrival in Atlanta</h3>
+            <p>Arrive in Atlanta from Mumbai. Check into your hotel and settle in. Spend the evening exploring Centennial Olympic Park and dining at a local restaurant.</p>
+            <div class="overlay"><br/> <table class="flight-table-overlay"><tr><th>From</th><th>Depart. Time</th><th>To</th><th>Arrival Time</th></tr>
+            <tr><td>Mumbai, India</td> <td>4:05am</td><td>London-Heathrow</td><td>9:40am</td></tr>
+            <tr><td>London-Heathrow</td> <td>11:20am</td><td>Atlanta</td><td>3:35pm</td></tr>
+            
+            </table>
+            </div> 
+        </div>
+
+        <div class="container">
+            <h3>Day 2-4: May 2-4, 2025 - Exploring Atlanta</h3>
+            <p>Visit the Georgia Aquarium, World of Coca-Cola, and Martin Luther King Jr. National Historical Park. On the last day, enjoy a stroll through the Atlanta Botanical Garden before your evening flight to Orlando.</p>
+            <div class="overlay">Flight: Atlanta (ATL) to Orlando (ORL)</div>
+        </div>
+
+        <div class="container">
+            <h3>Day 5-8: May 5-8, 2025 - Orlando Theme Parks</h3>
+            <p>Spend three days exploring Walt Disney World parks: Magic Kingdom, Epcot, and Disney's Hollywood Studios. Dedicate one day to Universal Studios for thrilling rides and attractions.</p>
+            <div class="overlay"></div>
+        </div>
+
+        <div class="container">
+            <h3>Day 9: May 9, 2025 - Relax and Flight to Seattle</h3>
+            <p>Spend the morning relaxing in Orlando before your evening flight to Seattle. Check into your hotel upon arrival.</p>
+            <div class="overlay">Flight: Orlando (ORL) to Seattle (SEA)</div>
+        </div>
+
+        <div class="container">
+            <h3>Day 10: May 10, 2025 - Exploring Seattle</h3>
+            <p>Visit the Boeing Factory, Amazon HQ, and Starbucks HQ. Enjoy an evening at Pike Place Market.</p>
+            <div class="overlay"></div>
+        </div>
+
+        <div class="container">
+            <h3>Day 11-18: May 11-18, 2025 - Alaska Cruise</h3>
+            <p>Board your cruise on the Norwegian Encore. Explore destinations like Juneau, Skagway, Glacier Bay, and Ketchikan. Disembark in Seattle on the morning of May 18.</p>
+            <div class="overlay">Flight: Seattle (SEA) to San Francisco (SFO)</div>
+        </div>
+
+        <div class="container">
+            <h3>Day 19-20: May 19-20, 2025 - San Francisco</h3>
+            <p>Visit Golden Gate Bridge, Alcatraz Island, and Fisherman's Wharf. Take a trip to Apple HQ for a tech-inspired experience.</p>
+            <div class="overlay"></div>
+        </div>
+
+        <div class="container">
+            <h3>Day 21: May 21, 2025 - Travel to Los Angeles</h3>
+            <p>Fly to Los Angeles. Spend the evening exploring Hollywood Boulevard and the Walk of Fame.</p>
+            <div class="overlay">Flight: San Francisco (SFO) to Los Angeles (LAX)</div>
+        </div>
+
+        <div class="container">
+            <h3>Day 22-23: May 22-23, 2025 - Los Angeles Highlights</h3>
+            <p>Visit Griffith Observatory, Santa Monica Pier, and Getty Center. Spend a day at Six Flags Magic Mountain for thrilling roller coasters.</p>
+            <div class="overlay">Flight: Los Angeles (LAX) to New York (NYC)</div>
+        </div>
+
+        <div class="container">
+            <h3>Day 24: May 24, 2025 - Flight to New York City</h3>
+            <p>Arrive in NYC and settle into your hotel. Take an evening walk through Times Square.</p>
+            <div class="overlay"></div>
+        </div>
+
+        <div class="container">
+            <h3>Day 25-26: May 25-26, 2025 - NYC Exploration</h3>
+            <p>Visit the Statue of Liberty, Empire State Building, and Central Park.</p>
+            <div class="overlay"></div>
+        </div>
+
+        <div class="container">
+            <h3>Day 27: May 27, 2025 - Trip to Buffalo</h3>
+            <p>Fly to Buffalo and visit Niagara Falls. Explore local attractions before returning to your hotel.</p>
+            <div class="overlay">Flight: New York (NYC) to Buffalo (BUF)</div>
+        </div>
+
+        <div class="container">
+            <h3>Day 28: May 28, 2025 - Washington, D.C.</h3>
+            <p>Travel to Washington, D.C., and explore White House, Capitol Building, the Smithsonian Museums and National Mall.</p>
+            <div class="overlay">Flight: Buffalo (BUF) to Washington DC (IAD)</div>
+        </div>
+
+        <div class="container">
+            <h3>Day 29-30: May 29-30, 2025 - Return to Mumbai</h3>
+            <p>Spend the final day shopping and relaxing in Washington, D.C. Depart for Mumbai on the evening of May 30, concluding your memorable trip.</p>
+            <div class="overlay">Flight: Washington DC (IAD) to Mumbai (BOM)</div>
+        </div>
+    </div>
+    <div><table class="flight-table">
+        <thead>
+            <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Mumbai (BOM)</td>
+                <td>Atlanta (ATL)</td>
+                <td>Thu 01/05</td>
+            </tr>
+            <tr>
+                <td>Atlanta (ATL)</td>
+                <td>Orlando (ORL)</td>
+                <td>Sun 04/05 (evening)</td>
+            </tr>
+            <tr>
+                <td>Orlando (ORL)</td>
+                <td>Seattle (SEA)</td>
+                <td>Fri 09/05 (evening)</td>
+            </tr>
+            <tr>
+                <td>Seattle (SEA)</td>
+                <td>San Francisco (SFO)</td>
+                <td>Sun 18/05 (morning)</td>
+            </tr>
+            <tr>
+                <td>San Francisco (SFO)</td>
+                <td>Los Angeles (LAX)</td>
+                <td>Wed 21/05</td>
+            </tr>
+            <tr>
+                <td>Los Angeles (LAX)</td>
+                <td>New York (NYC)</td>
+                <td>Sat 24/05</td>
+            </tr>
+            <tr>
+                <td>New York (NYC)</td>
+                <td>Buffalo (BUF)</td>
+                <td>Tue 27/05</td>
+            </tr>
+            <tr>
+                <td>Buffalo (BUF)</td>
+                <td>Washington DC (IAD)</td>
+                <td>Wed 28/05</td>
+            </tr>
+            <tr>
+                <td>Washington DC (IAD)</td>
+                <td>Mumbai (BOM)</td>
+                <td>Fri 30/05</td>
+            </tr>
+        </tbody>
+    </table></div>
+    <footer>
+        <marquee scrollamount="13" behaviour="slide">
+        <p>&copy; 2025 USA Trip Itinerary Planned by Kiaan Gupta</p>
+    </marquee>
+    </footer>
+</body>
+</html>
