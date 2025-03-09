@@ -12,7 +12,15 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+<<<<<<< HEAD
     "@capacitor/cli": "^7.0.1",
     "@capacitor/core": "^7.0.1"
+=======
+    "@capacitor/core": "^7.0.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.0.1",
+    "@capacitor/ios": "^7.0.1"
+>>>>>>> c22bb04 (Initial commit)
   }
 }
