@@ -5,7 +5,7 @@ workflows:
     instance_type: mac_mini_m1
     environment:
       vars:
-        XCODE_WORKSPACE: "App.xcworkspace"
+        XCODE_WORKSPACE: "ios/App.xcworkspace"
         XCODE_SCHEME: "App"
       flutter: stable
       xcode: latest
@@ -13,8 +13,9 @@ workflows:
       - name: Install dependencies
         script: |
           npm install
-          npx cap add ios || true  # Add iOS platform if not already added
-          npx cap sync ios          # Sync iOS dependencies
+          npx cap add ios || true
+          npx cap sync ios
+          cd ios && pod init && pod install && cd ..
       - name: Build iOS app
         script: |
           xcodebuild -workspace "$XCODE_WORKSPACE" -scheme "$XCODE_SCHEME" -sdk iphoneos -configuration Release build CODE_SIGNING_ALLOWED=NO
